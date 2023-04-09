@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:modernlogintute/manage_codes.dart';
-import 'package:modernlogintute/pages/auth_page.dart';
-import 'pages/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-
-
 import 'package:modernlogintute/pages/home_page.dart';
-import 'package:modernlogintute/pages/login_page.dart';
 import 'package:modernlogintute/paste_code_page.dart';
-
 import 'package:modernlogintute/code_generator_page.dart';
-import 'package:modernlogintute/paste_code_page.dart';
 import 'package:modernlogintute/page_one.dart'; 
 import 'package:modernlogintute/page_two.dart';
 import 'package:modernlogintute/page_three.dart';
