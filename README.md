@@ -48,7 +48,7 @@ flutter run -d chrome --web-hostname localhost --web-port 5000
 routes: {
 
 '/': (context) => CodeGeneratorPage(),
-'/home': (context) => HomePage(userId: '61XK',key: key),
+'/home': (context) => HomePage(),
 '/manage-code': (context) => ManageCodesPage(),
 '/paste-code': (context) => PasteCodePage(),
 '/page-one': (context) => PageOne(),
