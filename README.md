@@ -32,11 +32,39 @@ A simple app that generate a code that will redirect you to a specific route / p
 </p>
 
 
+<br/> 
+### Run your app 
+
+```
+flutter run -d chrome --web-hostname localhost --web-port 5000
+```
+
+
+<br/> 
+
+### Routes
+
+```
+routes: {
+
+'/': (context) => CodeGeneratorPage(),
+'/home': (context) => HomePage(userId: '61XK',key: key),
+'/manage-code': (context) => ManageCodesPage(),
+'/paste-code': (context) => PasteCodePage(),
+'/page-one': (context) => PageOne(),
+'/page-two': (context) => PageTwo(),
+'/page-three': (context) => PageThree(),
+
+ },
+```
+
 
 <br/> 
 
 ---
 
-Copy code to clipboard :
+
+
+**Copy code to clipboard :**
 
 https://stackoverflow.com/a/55885760/10216101
