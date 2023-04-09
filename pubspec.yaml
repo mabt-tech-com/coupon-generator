@@ -19,7 +19,6 @@ dependencies:
   lottie: ^2.2.0
   google_sign_in: ^6.0.1
   google_sign_in_web: ^0.11.0+1
-  flutter_windowmanager: ^0.2.0
   image_picker: ^0.8.7+1
   firebase_storage: ^11.1.0
   file_picker: ^5.2.7
@@ -39,6 +38,6 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - lib/images/
-    - lib/images/default_profile_image.png
+#  assets:
+#    - lib/images/
+#    - lib/images/default_profile_image.png

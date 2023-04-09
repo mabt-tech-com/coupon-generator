@@ -1,22 +1,18 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../user_crud/add_user.dart';
-import '../user_crud/read_users.dart';
 import 'package:modernlogintute/code_generator_page.dart';
 import 'package:modernlogintute/manage_codes.dart';
 import 'package:modernlogintute/paste_code_page.dart';
-import 'package:modernlogintute/page_one.dart'; 
+import 'package:modernlogintute/page_one.dart';
 import 'package:modernlogintute/page_two.dart';
 import 'package:modernlogintute/page_three.dart';
 
 
 class HomePage extends StatefulWidget {
   //final User user;
-  final String userId;
+
 
 //required this.user
-  const HomePage({Key? key, required this.userId}) : super(key: key);
+  const HomePage({Key? key }) : super(key: key);
 
 
   @override
@@ -24,46 +20,35 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final user = FirebaseAuth.instance.currentUser!;
 
 
-  void signUserOut() {
-    FirebaseAuth.instance.signOut();
-  }
 
   @override
   void initState() {
     super.initState();
-    getUserData();
+
 
   }
 
 
-  Future<void> getUserData() async {
-    final doc = await FirebaseFirestore.instance
-        .collection('users')
-        .doc(user.uid)
-        .get();
-    setState(() {
-      //User = user;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text(
-            user.email!,
-            style: const TextStyle(fontSize: 16),
+            "Welcome",
+            style: TextStyle(fontSize: 16),
           ),
         ),
         backgroundColor: Colors.deepPurple[200],
         elevation: 0,
         actions: [
           TextButton.icon(
-            onPressed: signUserOut,
+            onPressed: (){
+              print("Sign out button Pressed !!");
+            },
             icon: const Icon(Icons.logout, color: Colors.white),
             label: const Text(
               "Logout",
@@ -82,44 +67,15 @@ class _HomePageState extends State<HomePage> {
             Container(
               width: 120,
               height: 120,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   // Use the user's profile picture URL as the image source
-                  image: NetworkImage(
-                      user.photoURL ?? 'https://i.imgur.com/a73xXCl.png'),
+                  image: NetworkImage('https://i.imgur.com/a73xXCl.png'),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            const SizedBox(height: 16),
-            Text(
-              "Email: ${user.email}",
-              style: const TextStyle(fontSize: 20),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              "User Display Name : ${user.displayName}",
-              style: const TextStyle(fontSize: 20),
-            ),
-
-            const SizedBox(height: 20),
-
-
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ReadUsersPage(),
-                  ),
-                );
-              },
-              child: const Text('View All users page'),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.deepOrangeAccent,),
-            ),
-
             const SizedBox(height: 20),
 
             ElevatedButton(
@@ -138,28 +94,13 @@ class _HomePageState extends State<HomePage> {
 
             const SizedBox(height: 20),
 
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AddUserPage(),
-                  ),
-                );
-              },
-              child: const Text('Add New User '),
-            ),
-
-
-            const SizedBox(height: 30),
-
             const  Text(
-              "My New pages ( Code Generator ) ",
+              "Generate Code to be redirected !! ",
               style: const TextStyle(fontSize: 14),
             ),
 
-           
             const SizedBox(height: 10),
+
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -172,7 +113,7 @@ class _HomePageState extends State<HomePage> {
               child: const Text('Code Generator Page '),
             ),
 
-          const SizedBox(height: 10),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -185,7 +126,13 @@ class _HomePageState extends State<HomePage> {
               child: const Text('Paste Code Page'),
             ),
 
-           const SizedBox(height: 10),
+            const SizedBox(height: 10),
+
+            const  Text(
+              "My pages :",
+              style: const TextStyle(fontSize: 14),
+            ),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -199,7 +146,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
 
-           const SizedBox(height: 10),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -213,7 +160,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
 
-           const SizedBox(height: 10),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(

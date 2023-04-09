@@ -28,7 +28,7 @@ A simple app that generate a code that will redirect you to a specific route / p
 </p>
 
 <p align="center">
-<img src="https://i.imgur.com/lJnADlo.png" width="600">
+<img src="https://i.imgur.com/okcPBHO.png" width="600">
 </p>
 
 
